@@ -3,4 +3,5 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True, slots=True)
 class Sub:
-    sub: int
+    sub: str
+    exp: int

@@ -8,6 +8,7 @@ load_dotenv()
 class AuthConfig(BaseSettings):
     EXPIRES_AT: int
     SECRET_KEY: SecretStr
+    ALGORITHM: str
 
     model_config: SettingsConfigDict = SettingsConfigDict(
         env_file=".env", extra="allow"
@@ -47,6 +48,3 @@ class Settings(BaseSettings):
     model_config: SettingsConfigDict = SettingsConfigDict(
         env_file=".env", extra="allow"
     )
-
-
-settings: Settings = Settings()
