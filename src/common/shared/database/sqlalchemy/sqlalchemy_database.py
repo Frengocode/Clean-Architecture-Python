@@ -23,6 +23,4 @@ class SqlalchemyDatabase:
             yield session
 
 
-
-class Base(DeclarativeBase):
-    ...
+class Base(DeclarativeBase): ...
