@@ -34,7 +34,12 @@ class SharedProvider(Provider):
     def get_token_generator(self, settings: Settings) -> ITokenGenerator:
         return JwtTokenGenerator(settings=settings)
 
+    @provide(scope="app")
+    async def get_sqlalchemy_database(self, settings: Settings) -> SqlalchemyDatabase:
+        return SqlalchemyDatabase(settings=settings)
+
     @provide()
-    async def get_sqlalchemy_session(self, settings: Settings) -> AsyncSession:
-        sqlalchemy_database: SqlalchemyDatabase = SqlalchemyDatabase(settings=settings)
-        return await sqlalchemy_database.get_session()
+    async def get_sqlalchemy_session(
+        self, database: SqlalchemyDatabase
+    ) -> AsyncSession:
+        return await database.get_session()
