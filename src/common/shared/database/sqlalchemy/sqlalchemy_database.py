@@ -8,6 +8,7 @@ from sqlalchemy.ext.asyncio import (
 )
 
 from src.common.shared.config.config import Settings
+from sqlalchemy.orm import DeclarativeBase
 
 
 class SqlalchemyDatabase:
@@ -20,3 +21,8 @@ class SqlalchemyDatabase:
     async def get_session(self) -> AsyncGenerator[AsyncSession]:
         async with self.session_factory() as session:
             yield session
+
+
+
+class Base(DeclarativeBase):
+    ...

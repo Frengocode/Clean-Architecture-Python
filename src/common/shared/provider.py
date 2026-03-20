@@ -11,7 +11,7 @@ from src.common.shared.auth.infrastructure.token.jwt_token import JwtTokenGenera
 
 from src.common.shared.config.config import Settings
 
-from src.common.shared.database.infrastructure.sqlalchemy.sqlalchemy_database import (
+from common.shared.database.sqlalchemy.sqlalchemy_database import (
     SqlalchemyDatabase,
 )
 

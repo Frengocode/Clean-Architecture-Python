@@ -201,6 +201,7 @@ dependencies = [
     { name = "isort" },
     { name = "jose" },
     { name = "passlib" },
+    { name = "pino" },
     { name = "psycopg2" },
     { name = "pyjwt" },
     { name = "python-jose" },
@@ -220,6 +221,7 @@ requires-dist = [
     { name = "isort", specifier = ">=8.0.1" },
     { name = "jose", specifier = ">=1.0.0" },
     { name = "passlib", specifier = ">=1.7.4" },
+    { name = "pino", specifier = ">=0.6.0" },
     { name = "psycopg2", specifier = ">=2.9.11" },
     { name = "pyjwt", specifier = ">=2.12.1" },
     { name = "python-jose", specifier = ">=3.5.0" },
@@ -707,6 +709,18 @@ wheels = [
 ]
 
 [[package]]
+name = "pino"
+version = "0.6.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "style" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/88/7c/68bc956e96fdc1e76a3bc0b89deb0ab3fcb2ced2af76fd588ed6ac48e4bb/pino-0.6.0.tar.gz", hash = "sha256:fa60dcf8a087cd6f191c730744dcc96be9f371aef8b3320c48cbf0ffd1415afd", size = 5916, upload-time = "2020-11-30T16:52:41.89Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b0/a5/e1191ec5d6761f83cc0f91f4f6a446bdd6771a9c0a22a2e96b34fee4cc06/pino-0.6.0-py3-none-any.whl", hash = "sha256:b6ef45cd03ca082e89f728212c2fa664fb4888a01ae2fd644a83faf17a536c4b", size = 6109, upload-time = "2020-11-30T16:52:40.536Z" },
+]
+
+[[package]]
 name = "platformdirs"
 version = "4.9.4"
 source = { registry = "https://pypi.org/simple" }
@@ -1125,6 +1139,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/c4/68/79977123bb7be889ad680d79a40f339082c1978b5cfcf62c2d8d196873ac/starlette-0.52.1.tar.gz", hash = "sha256:834edd1b0a23167694292e94f597773bc3f89f362be6effee198165a35d62933", size = 2653702, upload-time = "2026-01-18T13:34:11.062Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/81/0d/13d1d239a25cbfb19e740db83143e95c772a1fe10202dda4b76792b114dd/starlette-0.52.1-py3-none-any.whl", hash = "sha256:0029d43eb3d273bc4f83a08720b4912ea4b071087a3b48db01b7c839f7954d74", size = 74272, upload-time = "2026-01-18T13:34:09.188Z" },
+]
+
+[[package]]
+name = "style"
+version = "1.1.6"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/c0/37/6e922b8b02286383d01ca8535bf615adc7ba32120f06e8c4e48f149b6b2a/style-1.1.6.tar.gz", hash = "sha256:d0ad01f3688b83e7fcbb305123df26f7018adf41babe2c12e4b9a68d4e598eb5", size = 3557, upload-time = "2019-03-08T14:52:36.999Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/20/06/ba0ecadb5d0d7b25505dc650c5c454c5448165b01e04ac4f207816623b8c/style-1.1.6-py2.py3-none-any.whl", hash = "sha256:48deb552717e4a38e607e5c667b89f07f4eca5bce94dbaabb66707bf395a2eb6", size = 5180, upload-time = "2019-03-08T14:52:35.873Z" },
 ]
 
 [[package]]
