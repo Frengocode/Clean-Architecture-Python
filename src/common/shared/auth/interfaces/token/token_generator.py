@@ -1,4 +1,5 @@
 from typing import Protocol
+
 from src.common.shared.auth.interfaces.token.sub import Sub
 
 
