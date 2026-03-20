@@ -1,4 +1,5 @@
 from passlib.context import CryptContext
+
 from src.common.shared.auth.interfaces.hash.hash import IHash
 
 

@@ -1,11 +1,14 @@
-from src.common.shared.database.interfaces.database.database import IDatabase
-from src.common.shared.config.config import Settings
+from typing import Any, AsyncGenerator
+
 from sqlalchemy.ext.asyncio import (
-    AsyncSession,
-    create_async_engine,
-    async_sessionmaker,
     AsyncEngine,
+    AsyncSession,
+    async_sessionmaker,
+    create_async_engine,
 )
+
+from src.common.shared.config.config import Settings
+from src.common.shared.database.interfaces.database.database import IDatabase
 
 
 class SqlalchemyDatabase(IDatabase):
@@ -19,7 +22,7 @@ class SqlalchemyDatabase(IDatabase):
         )
         return async_sessionmaker(bind=engine, class_=AsyncSession)
 
-    async def get_session(self):
+    async def get_session(self) -> AsyncGenerator[AsyncEngine, Any]:
         """Get's sqlalchemy session"""
 
         session: AsyncSession = await self.create_session()
