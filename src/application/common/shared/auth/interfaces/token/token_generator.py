@@ -1,6 +1,6 @@
 from typing import Protocol
 
-from src.common.shared.auth.interfaces.token.sub import Sub
+from src.application.common.shared.auth.interfaces.token.sub import Sub
 
 
 class ITokenGenerator(Protocol):
