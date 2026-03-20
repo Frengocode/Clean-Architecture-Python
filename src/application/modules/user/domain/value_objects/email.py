@@ -1,19 +1,14 @@
-from typing import Self
+from dataclasses import dataclass
 
 
+@dataclass(frozen=True)
 class Email:
-    def __init__(self, email: str) -> None:
-        self.email = email
+    _value: str
 
-    _instance = None
-
-    def __new__(cls, *args, **kwargs):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-        return cls._instance
+    def __post_init__(self):
+        if not self._value.endswith("@gmail.com"):
+            raise ValueError("Invalid email")
 
     @property
-    def email(self) -> Self:
-        if not self.email.endswith("@gmail.com"):
-            raise Exception("Invalid Email")
-        return Self
+    def value(self) -> str:
+        return self._value
