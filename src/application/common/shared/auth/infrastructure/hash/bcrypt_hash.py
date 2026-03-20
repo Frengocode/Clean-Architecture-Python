@@ -1,6 +1,6 @@
 from passlib.context import CryptContext
 
-from src.common.shared.auth.interfaces.hash.hash import IHash
+from src.application.common.shared.auth.interfaces.hash.hash import IHash
 
 
 class BcryptHash(IHash):

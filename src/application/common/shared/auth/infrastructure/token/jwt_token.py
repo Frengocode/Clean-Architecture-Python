@@ -1,8 +1,8 @@
 from jose import jwt
 
-from src.common.shared.auth.interfaces.token.sub import Sub
-from src.common.shared.auth.interfaces.token.token_generator import ITokenGenerator
-from src.common.shared.config.config import Settings
+from src.application.common.shared.auth.interfaces.token.sub import Sub
+from src.application.common.shared.auth.interfaces.token.token_generator import ITokenGenerator
+from src.application.common.shared.config.config import Settings
 
 
 class JwtTokenGenerator(ITokenGenerator):
