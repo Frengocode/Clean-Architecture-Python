@@ -9,7 +9,7 @@ class JwtTokenGenerator(ITokenGenerator):
         self.settings = settings
 
     def generator(self, sub: Sub) -> str:
-        """ Generates jwt token by sub """
+        """Generates jwt token by sub"""
         return jwt.decode(
             sub,
             self.settings.Auth.SECRET_KEY.get_secret_value(),
