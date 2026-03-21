@@ -6,9 +6,9 @@ from sqlalchemy.ext.asyncio import (
     async_sessionmaker,
     create_async_engine,
 )
+from sqlalchemy.orm import DeclarativeBase
 
 from src.application.common.shared.config.config import Settings
-from sqlalchemy.orm import DeclarativeBase
 
 
 class SqlalchemyDatabase:

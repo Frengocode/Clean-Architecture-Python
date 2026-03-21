@@ -1,13 +1,14 @@
+import uuid
+from datetime import UTC, datetime
+
+from sqlalchemy import UUID, DateTime, Uuid
 from sqlalchemy.orm import (
     DeclarativeBase,
     Mapped,
-    mapped_column,
     declarative_mixin,
     declared_attr,
+    mapped_column,
 )
-from sqlalchemy import Uuid, UUID, DateTime
-from datetime import datetime, UTC
-import uuid
 
 
 @declarative_mixin

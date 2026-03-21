@@ -1,10 +1,11 @@
+from abc import ABC, abstractmethod
+from typing import Any, List
+
 from src.application.modules.user.domain.entities.user import User
+from src.application.modules.user.domain.value_objects.email import Email
 from src.application.modules.user.domain.value_objects.user_id import UserId
 from src.application.modules.user.domain.value_objects.username import Username
-from src.application.modules.user.domain.value_objects.email import Email
 from src.application.modules.user.dto.requests.get_users_request import GetUsersRequest
-from typing import Any, List
-from abc import ABC, abstractmethod
 
 
 class IUserRepository(ABC):

@@ -1,25 +1,19 @@
+from common.shared.database.sqlalchemy.sqlalchemy_database import SqlalchemyDatabase
 from dishka import Provider, provide
-from sqlalchemy.ext.asyncio import AsyncSession
 from passlib.context import CryptContext
+from sqlalchemy.ext.asyncio import AsyncSession
 
-from src.application.common.shared.auth.interfaces.hash.hash import IHash
 from src.application.common.shared.auth.infrastructure.hash.bcrypt_hash import (
     BcryptHash,
-)
-
-from src.application.common.shared.auth.interfaces.token.token_generator import (
-    ITokenGenerator,
 )
 from src.application.common.shared.auth.infrastructure.token.jwt_token import (
     JwtTokenGenerator,
 )
-
-
-from src.application.common.shared.config.config import Settings
-
-from common.shared.database.sqlalchemy.sqlalchemy_database import (
-    SqlalchemyDatabase,
+from src.application.common.shared.auth.interfaces.hash.hash import IHash
+from src.application.common.shared.auth.interfaces.token.token_generator import (
+    ITokenGenerator,
 )
+from src.application.common.shared.config.config import Settings
 
 
 class SharedProvider(Provider):
