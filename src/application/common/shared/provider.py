@@ -1,5 +1,5 @@
 from aiokafka import AIOKafkaProducer
-from common.shared.database.sqlalchemy.sqlalchemy_database import SqlalchemyDatabase
+from src.application.common.shared.database.sqlalchemy.sqlalchemy_database import SqlalchemyDatabase
 from dishka import Provider, provide
 from passlib.context import CryptContext
 from sqlalchemy.ext.asyncio import AsyncSession
