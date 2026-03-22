@@ -13,20 +13,20 @@ from src.application.modules.user.domain.value_objects.email import Email
 from src.application.modules.user.domain.value_objects.user_id import UserId
 from src.application.modules.user.domain.value_objects.username import Username
 from src.application.modules.user.dto.requests.create_user_request import (
-    CreateUserRequest,
-)
-from src.application.modules.user.exceptions.exceptions import (
-    UserNotFoundException,
-    ExistUserException,
+    SCreateUserRequest,
 )
 from src.application.modules.user.dto.requests.get_users_request import GetUsersRequest
+from src.application.modules.user.exceptions.exceptions import (
+    ExistUserException,
+    UserNotFoundException,
+)
 
 
 class UserService(IUserService):
     def __init__(self, repository: IUserRepository) -> None:
         self.repository = repository
 
-    async def create_user(self, request: CreateUserRequest) -> User:
+    async def create_user(self, request: SCreateUserRequest) -> User:
 
         # Verifies exist user by email
         await self.__exist_user(Email(request.email))

@@ -11,5 +11,5 @@ class UserId:
         return str(uuid.uuid4())
 
     @property
-    def _value(self) -> str:
+    def value(self) -> str:
         self._value
