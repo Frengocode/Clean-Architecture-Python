@@ -1,3 +1,4 @@
+from aiokafka import AIOKafkaProducer
 from common.shared.database.sqlalchemy.sqlalchemy_database import SqlalchemyDatabase
 from dishka import Provider, provide
 from passlib.context import CryptContext
@@ -21,6 +22,13 @@ class SharedProvider(Provider):
     @provide()
     def get_settings(self) -> Settings:
         return Settings()
+
+    @provide(scope="app")
+    async def get_kafka_producer(self, settings: Settings) -> AIOKafkaProducer:
+        producer: AIOKafkaProducer = AIOKafkaProducer(
+            bootstrap_servers=settings.Kafka.KAFKA_BOOTSTRAP_SERVER.get_secret_value()
+        )
+        return await producer.start()
 
     @provide()
     def get_crypt_context(self) -> CryptContext:
