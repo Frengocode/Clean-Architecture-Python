@@ -10,8 +10,11 @@ from src.application.modules.user.use_cases.create_user_use_case import (
     ICreateUserUseCase,
 )
 from dishka import FromDishka
+from dishka.integrations.fastapi import DishkaRoute
 
-user_router: APIRouter = APIRouter(prefix="/users/api/v1", tags=["Users"])
+user_router: APIRouter = APIRouter(
+    prefix="/users/api/v1", tags=["Users"], route_class=DishkaRoute
+)
 
 
 @user_router.post("/", response_model=SCreateUserResponse)

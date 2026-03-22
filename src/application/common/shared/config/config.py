@@ -5,6 +5,14 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 load_dotenv()
 
 
+class AppConfig(BaseSettings):
+    TITLE: str
+
+    model_config: SettingsConfigDict = SettingsConfigDict(
+        env_file=".env", extra="allow"
+    )
+
+
 class AuthConfig(BaseSettings):
     EXPIRES_AT: int
     SECRET_KEY: SecretStr
@@ -40,6 +48,7 @@ class KafkaConfig(BaseSettings):
 
 
 class Settings(BaseSettings):
+    App: AppConfig = AppConfig()
     Auth: AuthConfig = AuthConfig()
     Database: DatabaseConfig = DatabaseConfig()
     Redis: RedisConfig = RedisConfig()
@@ -48,3 +57,6 @@ class Settings(BaseSettings):
     model_config: SettingsConfigDict = SettingsConfigDict(
         env_file=".env", extra="allow"
     )
+
+
+settings: Settings = Settings()
