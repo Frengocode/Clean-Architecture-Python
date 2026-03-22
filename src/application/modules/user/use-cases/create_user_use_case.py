@@ -1,5 +1,6 @@
 from loguru import logger
 
+from src.application.common.shared.auth.interfaces.hash.hash import IHash
 from src.application.modules.user.domain.entities.user import User
 from src.application.modules.user.domain.interfaces.events.payloads.user_created_event_payload import (
     UserCreatedEventPayload,
@@ -23,12 +24,14 @@ from src.application.modules.user.dto.responses.create_user_response import (
 
 class CreateUserUseCase(ICreateUserUseCase):
     def __init__(
-        self, service: IUserService, user_created_event: IUserCreatedEvent
+        self, service: IUserService, user_created_event: IUserCreatedEvent, hash: IHash
     ) -> None:
         self.service = service
         self.user_created_event = user_created_event
+        self.hash = hash
 
     async def execute(self, request: SCreateUserRequest) -> SCreateUserResponse:
+        request.password = self.hash.hash_value(request.password)
         user: User = await self.service.create_user(request=request)
         await self.__publish_event(user=user)
         logger.info("[CreateUserUseCase] was executed successfully")
