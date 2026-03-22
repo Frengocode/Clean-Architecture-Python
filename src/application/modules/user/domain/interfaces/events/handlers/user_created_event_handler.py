@@ -1,4 +1,5 @@
 from typing import Protocol
+
 from src.application.modules.user.domain.interfaces.events.payloads.user_created_event_payload import (
     UserCreatedEventPayload,
 )
