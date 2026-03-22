@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import Optional
 
 from src.application.modules.user.domain.value_objects.email import Email
 from src.application.modules.user.domain.value_objects.password import Password
@@ -11,7 +12,7 @@ class User:
     id: UserId
     email: Email
     username: Username
-    password: Password
+    password: Optional[Password]
 
     def exist_user(self, email: Email) -> None:
         if self.email.value == email:

@@ -10,5 +10,5 @@ class Username:
             raise Exception("Username can't be small than 4 words")
 
     @property
-    def _value(self) -> str:
+    def value(self) -> str:
         return self._value
