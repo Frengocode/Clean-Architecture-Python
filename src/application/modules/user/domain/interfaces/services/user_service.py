@@ -10,7 +10,7 @@ from src.application.modules.user.dto.requests.create_user_request import (
 from src.application.modules.user.dto.requests.get_users_request import GetUsersRequest
 
 
-class UserService(Protocol):
+class IUserService(Protocol):
 
     async def create_user(self, request: CreateUserRequest) -> User: ...
 
