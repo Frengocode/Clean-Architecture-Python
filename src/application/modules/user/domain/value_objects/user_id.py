@@ -1,5 +1,5 @@
-from dataclasses import dataclass
 import uuid
+from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
@@ -11,5 +11,5 @@ class UserId:
         return str(uuid.uuid4())
 
     @property
-    def _value(self) -> str:
+    def value(self) -> str:
         self._value
