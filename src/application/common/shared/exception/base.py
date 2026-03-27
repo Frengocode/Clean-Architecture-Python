@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from fastapi import HTTPException
 
 
-@dataclass
+@dataclass(frozen=True)
 class BaseException(HTTPException):
     """Base Exception builder"""
 
